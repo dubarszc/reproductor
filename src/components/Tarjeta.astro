@@ -1,0 +1,14 @@
+---
+interface Props {
+    artista: string
+    titulo: string
+    album: string
+}
+
+const {artista, titulo, album} = Astro.props
+---
+<div>
+    <h2>{artista}</h2>
+    <p>{titulo}</p>
+    <p>{album}</p>
+</div>
