@@ -19,7 +19,9 @@ const {songs} = await api.json()
 				client:visible
 				titulo={song.title}
 				artista={song.author}
-				album={song.album}></Tarjeta>
+				album={song.album}
+				audioUrl={song.audio.url}
+				/>
 			))
 		}
 	</div>

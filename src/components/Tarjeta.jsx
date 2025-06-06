@@ -1,11 +1,17 @@
+import { $cancionActual } from '../store'
 import './Tarjeta.css'
 
 export default function ({
-    artista, titulo, album
+    artista, titulo, album, audioUrl
 }) {
 
 const handlerClick =() => {
-    console.log('Cilick en la cancion')
+    $cancionActual.set({
+        titulo,
+        artista,
+        album,
+        audioUrl
+    })
 }
   
     return (
