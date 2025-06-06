@@ -1,3 +1,8 @@
+---
+import { Icon } from 'astro-icon/components'
+import './global.css'
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -8,15 +13,52 @@
 		<title>Astro Basics</title>
 	</head>
 	<body>
+		<div class="navbar">
+			<div class="logo">
+				<Icon name='mdi:spotify'></Icon>
+			</div>
+			<!-- frame 9 -->
+			<div>
+				<!--frame 8 -->
+				<div>
+					<!--frame 6 -->
+					<div>
+						<Icon name='mdi:home'></Icon>
+					</div>
+					<!--frame 1 -->
+					<div>
+						<Icon name="mdi:search"></Icon>
+						<p>que quieres reproducir?</p>
+					</div>
+				</div>
+				<!--frame 5 -->
+				<div>
+					<!--Frame 2 -->
+					<div>
+						<p>Explorar el premium</p>
+					</div>
+					<!--Frame 3 -->
+					<div>
+						<Icon name="grommet-icons:install-option"></Icon>
+						<p>Instalar la aplicacion</p>
+					</div>
+				</div>
+				<!--frame 4 -->
+				<div>
+					<Icon class='icon' name="mdi:bell-outline"></Icon>
+					<Icon class='icon' name="mynaui:users-group"></Icon>
+					<Icon class='icon' name="emojione:letter-d"></Icon>
+				</div>
+			</div>
+		</div>
 		<slot />
 	</body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
+	
+	.icon {
+		
+		color: red;
 	}
 </style>

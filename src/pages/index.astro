@@ -1,7 +1,8 @@
 ---
 
-import Tarjeta from '../components/Tarjeta.astro';
+import Tarjeta from '../components/Tarjeta.jsx';
 import Layout from '../layouts/Layout.astro';
+
 
 const api = await fetch('https://api.institutoalfa.org/api/songs')
 const {songs} = await api.json()
@@ -15,6 +16,7 @@ const {songs} = await api.json()
 		{
 			songs.map(song => (
 				<Tarjeta
+				client:visible
 				titulo={song.title}
 				artista={song.author}
 				album={song.album}></Tarjeta>
@@ -22,5 +24,6 @@ const {songs} = await api.json()
 		}
 	</div>
 
-	
+
 </Layout>
+
