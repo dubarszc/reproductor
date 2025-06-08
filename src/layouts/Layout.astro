@@ -1,7 +1,8 @@
 ---
 import { Icon } from 'astro-icon/components'
 import './global.css'
-import Footer from '../components/Footer'
+import Footer from '../components/SongBar'
+import SongBar from '../components/SongBar'
 ---
 
 <!doctype html>
@@ -19,33 +20,33 @@ import Footer from '../components/Footer'
 				<Icon name='mdi:spotify'></Icon>
 			</div>
 			<!-- frame 9 -->
-			<div>
+			<div class="navbar-items">
 				<!--frame 8 -->
-				<div>
+				<div class="navbar-items">
 					<!--frame 6 -->
-					<div>
+					<div class="home-icon">
 						<Icon name='mdi:home'></Icon>
 					</div>
 					<!--frame 1 -->
-					<div>
+					<div class="search">
 						<Icon name="mdi:search"></Icon>
 						<p>que quieres reproducir?</p>
 					</div>
 				</div>
 				<!--frame 5 -->
-				<div>
+				<div class="navbar-items">
 					<!--Frame 2 -->
-					<div>
+					<div class="button-premium">
 						<p>Explorar el premium</p>
 					</div>
 					<!--Frame 3 -->
-					<div>
+					<div class="navbar-items">
 						<Icon name="grommet-icons:install-option"></Icon>
 						<p>Instalar la aplicacion</p>
 					</div>
 				</div>
 				<!--frame 4 -->
-				<div>
+				<div class="navbar-items-icons">
 					<Icon class='icon' name="mdi:bell-outline"></Icon>
 					<Icon class='icon' name="mynaui:users-group"></Icon>
 					<Icon class='icon' name="emojione:letter-d"></Icon>
@@ -54,14 +55,76 @@ import Footer from '../components/Footer'
 		</div>
 		<slot />
 
-		<Footer client:visible></Footer>
+		<SongBar client:visible></SongBar>
 	</body>
 </html>
 
 <style>
-	
-	.icon {
+	.navbar, .navbar-items {
+		color: #ffffff;
+		padding: 5px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 15px;
 		
-		color: #1e1e1e;
+		
 	}
+	.logo {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 5px;
+		width: 32px;
+		height: 32px;
+		background-color: #1e1e1e;
+		color: #fff;
+		border-radius: 50%;
+		cursor: pointer;
+	}
+
+	.home-icon{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 32px;
+		height: 32px;
+		border-radius: 50%;
+		background-color: #1e1e1e;
+		color: #fff;
+		cursor: pointer;
+	}
+
+	.search {
+		display: flex;
+		align-items: center;
+		background-color: #1e1e1e;
+		border-radius: 20px;
+		padding: 5px 10px;
+		gap: 5px;
+		color: #ffffff;
+	
+	}
+
+	.button-premium {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: #ffffff;
+		border-radius: 20px;
+		padding: 2px 5px;
+		color: #ffffff;
+		cursor: pointer;
+	}
+
+	.navbar-items-icons {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		color: #ffffff;
+	}
+
+
+
+	
 </style>

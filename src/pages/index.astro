@@ -10,8 +10,41 @@ const {songs} = await api.json()
 ---
 
 <Layout>
-	<div>
-		<h1>reproductor</h1>
+	<div class="container">
+
+		<div class="biblioteca">
+			<h1>Tu Biblioteca</h1>
+			
+			{
+				songs.map(song => (
+					<Tarjeta
+					client:visible
+					titulo={song.title}
+					artista={song.author}
+					album={song.album}
+				audioUrl={song.audio.url}
+				/>
+			))
+		}
+	</div>
+
+	<div class="centro">
+		{
+				songs.map(song => (
+					<Tarjeta
+					client:visible
+					titulo={song.title}
+					artista={song.author}
+					album={song.album}
+				audioUrl={song.audio.url}
+				imgUrl={song.image.url}
+				/>
+			))
+		}
+	</div>
+	
+		<div class="biblioteca">
+		<h1>Tu Biblioteca</h1>
 		 
 		{
 			songs.map(song => (
@@ -21,11 +54,44 @@ const {songs} = await api.json()
 				artista={song.author}
 				album={song.album}
 				audioUrl={song.audio.url}
+				imgUrl={song.image.url}
 				/>
 			))
 		}
-	</div>
-
-
+	
 </Layout>
+
+<style>
+	.biblioteca {
+		background-color: #3e3e3e;
+		padding: 30px;
+		margin: 0 10px;
+		border-radius: 10px;
+		width: 30%;
+		gap: 20px;
+	}
+	
+	h1 {
+		color: #fff;
+		
+		
+	}
+	.container {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+	}
+
+	.centro {
+		background-color: #3e3e3e;
+		padding: 30px;
+		border-radius: 10px;
+		width: 69%;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 20px;
+	}
+
+	
+	
 
