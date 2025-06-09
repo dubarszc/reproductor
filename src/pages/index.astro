@@ -13,12 +13,13 @@ const {songs} = await api.json()
 	<div class="container">
 
 		<div class="biblioteca">
-			<h1>Tu Biblioteca</h1>
 			
+			<h1>Tu Biblioteca</h1>
 			{
 				songs.map(song => (
 					<Tarjeta
 					client:visible
+					imgUrl={song.image.url}
 					titulo={song.title}
 					artista={song.author}
 					album={song.album}
@@ -33,28 +34,29 @@ const {songs} = await api.json()
 				songs.map(song => (
 					<Tarjeta
 					client:visible
+					imgUrl={song.image.url}
 					titulo={song.title}
 					artista={song.author}
 					album={song.album}
 				audioUrl={song.audio.url}
-				imgUrl={song.image.url}
 				/>
 			))
 		}
 	</div>
 	
 		<div class="biblioteca">
-		<h1>Tu Biblioteca</h1>
-		 
-		{
-			songs.map(song => (
+			
+			<h1>Los Que Estas Escuchando</h1>
+			{
+				songs.map(song => (
+					
 				<Tarjeta
 				client:visible
+				imgUrl={song.image.url}
 				titulo={song.title}
 				artista={song.author}
 				album={song.album}
 				audioUrl={song.audio.url}
-				imgUrl={song.image.url}
 				/>
 			))
 		}
@@ -68,8 +70,10 @@ const {songs} = await api.json()
 		margin: 0 10px;
 		border-radius: 10px;
 		width: 30%;
+		height: 60%;
 		gap: 20px;
 	}
+
 	
 	h1 {
 		color: #fff;
@@ -91,6 +95,8 @@ const {songs} = await api.json()
 		flex-wrap: wrap;
 		gap: 20px;
 	}
+
+
 
 	
 	

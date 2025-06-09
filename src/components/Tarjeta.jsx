@@ -2,25 +2,25 @@ import { $cancionActual } from '../store'
 import './Tarjeta.css'
 
 export default function ({
-    artista, titulo, album, audioUrl, imgUrl
+    imgUrl, artista, titulo, album, audioUrl
 }) {
 
 const handlerClick =() => {
     $cancionActual.set({
+        imgUrl,
         titulo,
         artista,
         album,
-        audioUrl,
-        imgUrl
+        audioUrl
     })
 }
   
     return (
         <div>
+            <img src={imgUrl} alt={titulo} />
             <h2>{artista}</h2>
             <p>{titulo}</p>
             <p>{album}</p>
-            <img src={imgUrl} alt={titulo} />
             <button onClick={handlerClick}>Play</button>
         </div>
     )

@@ -24,7 +24,7 @@ export default function (){
         }
     }
     return (
-        song
+        cancionActual && cancionActual.image && cancionActual.audio
         ? <>
             <div className='song-bar'>
                 <div className='song-bar__info'>
