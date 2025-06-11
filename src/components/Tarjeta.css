@@ -1,11 +1,36 @@
+
+    .tarjeta {
+        display: flex;
+        align-items: center;
+        background: linear-gradient(135deg, #181818 0%, #282828 100%);
+        border: none;
+        border-radius: 16px;
+        padding: 20px 24px;
+        margin: 16px 0;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+        transition: transform 0.15s, box-shadow 0.15s;
+        cursor: pointer;
+    }
  
-
+    .tarjeta img {
+        width: 88px;
+        height: 88px;
+        border-radius: 12px;
+        margin-right: 24px;
+        object-fit: cover;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
     h2 {
-        color: #333;
-        font-size: 1.2em;
+        color: #fff;
+        font-size: 1.3em;
+        font-weight: 700;
+        margin: 0 0 6px 0;
+        letter-spacing: 0.5px;
     }
-
     p {
-        color: #666;
-        margin: 5px 0;
+        color: #b3b3b3;
+        margin: 0;
+        font-size: 1em;
+        line-height: 1.4;
     }
+   

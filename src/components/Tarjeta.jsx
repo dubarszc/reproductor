@@ -16,7 +16,7 @@ const handlerClick =() => {
 }
   
     return (
-        <div>
+        <div className='tarjeta' onClick={handlerClick}>
             <img src={imgUrl} alt={titulo} />
             <h2>{artista}</h2>
             <p>{titulo}</p>
