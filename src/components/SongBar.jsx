@@ -48,7 +48,7 @@ export default function () {
                                 <button>Play</button>
                             </div>
                         </>
-                        :<>No hay cancion seleccionada </>
+                        :<>No hay cancion seleccionada, selecciona alguna </>
                 }
             </div>
         </>
