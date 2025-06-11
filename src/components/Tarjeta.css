@@ -2,19 +2,20 @@
     .tarjeta {
         display: flex;
         align-items: center;
-        background: linear-gradient(135deg, #181818 0%, #282828 100%);
         border: none;
         border-radius: 16px;
-        padding: 20px 24px;
-        margin: 16px 0;
-        box-shadow: 0 4px 24px rgba(0,0,0,0.3);
-        transition: transform 0.15s, box-shadow 0.15s;
+        padding: 20px;
         cursor: pointer;
+    }
+
+    .tarjeta:hover {
+        background-color: #1a1a1a;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
  
     .tarjeta img {
-        width: 88px;
-        height: 88px;
+        width: 20%;
+        height: 20%;
         border-radius: 12px;
         margin-right: 24px;
         object-fit: cover;

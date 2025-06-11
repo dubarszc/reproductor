@@ -1,103 +1,77 @@
 ---
+import SongBar from "../components/SongBar.jsx";
+import Tarjeta from "../components/Tarjeta.jsx";
+import Layout from "../layouts/Layout.astro";
 
-import Tarjeta from '../components/Tarjeta.jsx';
-import Layout from '../layouts/Layout.astro';
-
-
-const api = await fetch('https://api.institutoalfa.org/api/songs')
-const {songs} = await api.json()
-
+const api = await fetch("https://api.institutoalfa.org/api/songs");
+const { songs } = await api.json();
 ---
 
 <Layout>
 	<div class="container">
-
 		<div class="biblioteca">
-			
-			<h1>Tu Biblioteca</h1>
+			<h1>lista</h1>
 			{
-				songs.map(song => (
+				songs.map((song) => (
 					<Tarjeta
-					client:visible
-					imgUrl={song.image.url}
-					titulo={song.title}
-					artista={song.author}
-					album={song.album}
-				audioUrl={song.audio.url}
-				/>
-			))
-		}
-	</div>
+						client:visible
+						imgUrl={song.image.url}
+						titulo={song.title}
+						audioUrl={song.audio.url}
+					/>
+				))
+			}
+		</div>
 
-	<div class="centro">
-		{
-				songs.map(song => (
+		<div class="centro">
+			{
+				songs.map((song) => (
 					<Tarjeta
-					client:visible
-					imgUrl={song.image.url}
-					titulo={song.title}
-					artista={song.author}
-					album={song.album}
-				audioUrl={song.audio.url}
-				/>
-			))
-		}
-	</div>
-	
+						client:visible
+						imgUrl={song.image.url}
+						titulo={song.title}
+						audioUrl={song.audio.url}
+					/>
+				))
+			}
+		</div>
+
 		<div class="biblioteca">
-			
 			<h1>Los Que Estas Escuchando</h1>
-			{
-				songs.map(song => (
-					
-				<Tarjeta
-				client:visible
-				imgUrl={song.image.url}
-				titulo={song.title}
-				artista={song.author}
-				album={song.album}
-				audioUrl={song.audio.url}
-				/>
-			))
-		}
-	
-</Layout>
+						<SongBar client:visible />			
+		</div>
 
-<style>
-	.biblioteca {
-		background-color: #3e3e3e;
-		padding: 30px;
-		margin: 0 10px;
-		border-radius: 10px;
-		width: 30%;
-		height: 60%;
-		gap: 20px;
-	}
+		<style>
+			.biblioteca {
+				background-color: #3e3e3e;
+				padding: 30px;
+				margin: 0 10px;
+				border-radius: 10px;
+				width: 30%;
+				height: 650px;
+				gap: 20px;
+			}
 
-	
-	h1 {
-		color: #fff;
-		
-		
-	}
-	.container {
-		display: flex;
-		justify-content: space-between;
-		width: 100%;
-	}
+			h1 {
+				color: #fff;
+			}
+			.container {
+				display: flex;
+				justify-content: space-between;
+				width: 100%;
+			
+			}
 
-	.centro {
-		background-color: #3e3e3e;
-		padding: 30px;
-		border-radius: 10px;
-		width: 69%;
-		display: flex;
-		flex-wrap: wrap;
-		gap: 20px;
-	}
-
-
-
-	
-	
-
+			.centro {
+				background-color: #3e3e3e;
+				padding: 30px;
+				border-radius: 10px;
+				width: 69%;
+				height: 650px;
+				display: flex;
+				flex-wrap: wrap;
+				gap: 20px;
+			}
+		</style>
+	</div></Layout
+>

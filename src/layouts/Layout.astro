@@ -1,8 +1,7 @@
 ---
-import { Icon } from 'astro-icon/components'
-import './global.css'
-import SongBar from '../components/SongBar'
-
+import { Icon } from "astro-icon/components";
+import "./global.css";
+import SongBar from "../components/SongBar";
 ---
 
 <!doctype html>
@@ -17,7 +16,7 @@ import SongBar from '../components/SongBar'
 	<body>
 		<div class="navbar">
 			<div class="logo">
-				<Icon name='mdi:spotify'></Icon>
+				<Icon name="mdi:spotify" />
 			</div>
 			<!-- frame 9 -->
 			<div class="navbar-items">
@@ -25,11 +24,11 @@ import SongBar from '../components/SongBar'
 				<div class="navbar-items">
 					<!--frame 6 -->
 					<div class="home-icon">
-						<Icon name='mdi:home'></Icon>
+						<Icon name="mdi:home" />
 					</div>
 					<!--frame 1 -->
 					<div class="search">
-						<Icon name="mdi:search"></Icon>
+						<Icon name="mdi:search" />
 						<p>que quieres reproducir?</p>
 					</div>
 				</div>
@@ -41,34 +40,42 @@ import SongBar from '../components/SongBar'
 					</div>
 					<!--Frame 3 -->
 					<div class="navbar-items">
-						<Icon name="grommet-icons:install-option"></Icon>
+						<Icon name="grommet-icons:install-option" />
 						<p>Instalar la aplicacion</p>
 					</div>
 				</div>
 				<!--frame 4 -->
 				<div class="navbar-items-icons">
-					<Icon class='icon' name="mdi:bell-outline"></Icon>
-					<Icon class='icon' name="mynaui:users-group"></Icon>
-					<Icon class='icon' name="emojione:letter-d"></Icon>
+					<Icon class="icon" name="mdi:bell-outline" />
+					<Icon class="icon" name="mynaui:users-group" />
+					<Icon class="icon" name="emojione:letter-d" />
 				</div>
 			</div>
 		</div>
 		<slot />
 
-		<SongBar client:visible></SongBar>
 	</body>
 </html>
 
 <style>
-	.navbar, .navbar-items {
+	body {
+		position: relative;
+	}
+	.song-bar {
+		position: sticky;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		z-index: 100;
+	}
+	.navbar,
+	.navbar-items {
 		color: #ffffff;
 		padding: 5px;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		gap: 15px;
-		
-		
 	}
 	.logo {
 		display: flex;
@@ -83,7 +90,7 @@ import SongBar from '../components/SongBar'
 		cursor: pointer;
 	}
 
-	.home-icon{
+	.home-icon {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -103,7 +110,6 @@ import SongBar from '../components/SongBar'
 		padding: 5px 10px;
 		gap: 5px;
 		color: #ffffff;
-	
 	}
 
 	.button-premium {
@@ -123,8 +129,4 @@ import SongBar from '../components/SongBar'
 		gap: 10px;
 		color: #ffffff;
 	}
-
-
-
-	
 </style>
